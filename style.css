@@ -19,6 +19,37 @@ animation: fadeUp 600ms cubic-bezier(.2,.8,.2,1) both;
 .animate-fade-up { animation: none; }
 }
 
+/* Marquee / scrolling tagline */
+@keyframes marqueeScroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.marquee-wrap {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    border-radius: calc(var(--radius) - 2px);
+    padding: 6px 8px;
+    margin-top: 0.5rem;
+}
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    /* slow enough to read */
+    animation: marqueeScroll 24s linear infinite;
+    font-weight: 500;
+}
+.marquee:hover,
+.marquee:focus {
+    animation-play-state: paused;
+    outline: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee { animation: none; }
+}
+
 /* according to google the bits after this is like the main bits */
 
 body {
