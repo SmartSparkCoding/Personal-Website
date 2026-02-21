@@ -43,7 +43,6 @@ animation: fadeUp 600ms cubic-bezier(.2,.8,.2,1) both;
     align-items: center;
     width: max-content;
     will-change: transform;
-    animation: marquee 10s linear infinite;
 }
 .marquee__text {
     display: inline-block;

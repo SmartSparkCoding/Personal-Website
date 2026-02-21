@@ -107,3 +107,44 @@
 </div>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const marqueeTracks = document.querySelectorAll('.marquee__track');
+    marqueeTracks.forEach((track, idx) => {
+        const container = track.parentElement; // .marquee
+        const first = track.querySelector('.marquee__text');
+        if (!first) return;
+        const text = first.textContent.trim();
+        const baseHTML = `<span class="marquee__text">${text}</span>`;
+        // build enough repeats so the track is at least twice the container width
+        track.innerHTML = '';
+        let safety = 0;
+        while (track.scrollWidth < container.clientWidth * 2 && safety < 40) {
+            track.insertAdjacentHTML('beforeend', baseHTML);
+            safety++;
+        }
+        // ensure even number of repeats so first half equals second half
+        const repeats = track.querySelectorAll('.marquee__text').length;
+        if (repeats % 2 !== 0) {
+            track.insertAdjacentHTML('beforeend', baseHTML);
+        }
+
+        const distance = track.scrollWidth / 2;
+        const speed = 120; // pixels per second (higher = faster)
+        const duration = Math.max(6, distance / speed); // min 6s to avoid instant
+
+        const animName = `marqueeAnim_${idx}`;
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = `@keyframes ${animName} { from { transform: translateX(0); } to { transform: translateX(-${distance}px); } }`;
+        document.head.appendChild(styleTag);
+
+        track.style.animation = `${animName} ${duration}s linear infinite`;
+        // pause on hover/focus
+        track.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+        track.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+        track.addEventListener('focusin', () => track.style.animationPlayState = 'paused');
+        track.addEventListener('focusout', () => track.style.animationPlayState = 'running');
+    });
+});
+</script>
