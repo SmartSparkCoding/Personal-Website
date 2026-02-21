@@ -19,10 +19,10 @@ animation: fadeUp 600ms cubic-bezier(.2,.8,.2,1) both;
 .animate-fade-up { animation: none; }
 }
 
-/* Marquee / scrolling tagline */
-@keyframes marqueeScroll {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+/* Marquee / scrolling tagline (seamless track) */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 .marquee-wrap {
     width: 100%;
@@ -34,20 +34,29 @@ animation: fadeUp 600ms cubic-bezier(.2,.8,.2,1) both;
     margin-top: 0.5rem;
 }
 .marquee {
+    width: 100%;
+    overflow: hidden;
+}
+.marquee__track {
+    display: inline-flex;
+    gap: 2rem;
+    align-items: center;
+    width: max-content;
+    will-change: transform;
+    animation: marquee 10s linear infinite;
+}
+.marquee__text {
     display: inline-block;
     white-space: nowrap;
-    will-change: transform;
-    /* slightly faster for readability; translate by 50% for seamless loop (requires duplicated text) */
-    animation: marqueeScroll 18s linear infinite;
     font-weight: 500;
 }
-.marquee:hover,
-.marquee:focus {
+.marquee__track:hover,
+.marquee__track:focus {
     animation-play-state: paused;
     outline: none;
 }
 @media (prefers-reduced-motion: reduce) {
-    .marquee { animation: none; }
+    .marquee__track { animation: none; }
 }
 
 /* according to google the bits after this is like the main bits */
