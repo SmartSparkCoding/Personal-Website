@@ -37,7 +37,7 @@
         <h2>Hack Club</h2>
         <p>My Hackatime coding stats:</p>
         <div class="hack-stats">
-            <a href="https://hackatime.hackclub.com/@28502" target="_blank" rel="noopener noreferrer">
+            <a href="https://hackatime.hackclub.com/@DiscoveryJN" target="_blank" rel="noopener noreferrer">
                 <img class="hack-stat-img" src="https://github-readme-stats.hackclub.dev/api/wakatime?username=28502&api_domain=hackatime.hackclub.com&theme=radical&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8" alt="Hackatime Stats for Jacob">
             </a>
             <hr class="stat-sep" aria-hidden="true">
@@ -115,8 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = track.parentElement; // .marquee
         const first = track.querySelector('.marquee__text');
         if (!first) return;
-        const text = first.textContent.trim();
-        const baseHTML = `<span class="marquee__text">${text}</span>`;
+    let text = first.textContent.trim();
+    const sep = ' | ';
+    if (!text.endsWith('|') && !text.endsWith(sep)) text = text + sep;
+    const baseHTML = `<span class="marquee__text">${text}</span>`;
         // build enough repeats so the track is at least twice the container width
         track.innerHTML = '';
         let safety = 0;
@@ -131,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const distance = track.scrollWidth / 2;
-        const speed = 120; // pixels per second (higher = faster)
-        const duration = Math.max(6, distance / speed); // min 6s to avoid instant
+        const speed = 80; // pixels per second (higher = faster); lowered for slower scroll
+        const duration = Math.max(8, distance / speed); // min 8s to avoid instant
 
         const animName = `marqueeAnim_${idx}`;
         const styleTag = document.createElement('style');
