@@ -61,18 +61,35 @@ a:focus {
     text-decoration: underline;
 }
 
-:/* Hack Club stats */
+/* Hack Club stats */
 #hack-club {
     margin-top: 1.25rem;
+    text-align: center;
 }
-#hack-club img {
-    max-width: 100%;
+.hack-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+.hack-stat-img {
+    width: 100%;
+    max-width: 700px;
     height: auto;
     border-radius: 6px;
-    display: inline-block;
+    display: block;
+}
+.stat-sep {
+    width: clamp(160px, 60%, 600px);
+    height: 1px;
+    background-color: rgba(128,128,128,0.5);
+    border: none;
+    margin: 0.25rem 0;
 }
 
 :focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
 }
+
+/* this whole css was really hard to make */
