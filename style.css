@@ -37,8 +37,8 @@ animation: fadeUp 600ms cubic-bezier(.2,.8,.2,1) both;
     display: inline-block;
     white-space: nowrap;
     will-change: transform;
-    /* slow enough to read; translate by 50% for seamless loop (requires duplicated text) */
-    animation: marqueeScroll 24s linear infinite;
+    /* slightly faster for readability; translate by 50% for seamless loop (requires duplicated text) */
+    animation: marqueeScroll 18s linear infinite;
     font-weight: 500;
 }
 .marquee:hover,
