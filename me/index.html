@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jacob Navaratne | Contact</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+
+        background:
+            radial-gradient(circle at top left, #2563eb, transparent 40%),
+            radial-gradient(circle at bottom right, #7c3aed, transparent 40%),
+            #020617;
+
+        color: white;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 700px;
+        padding: 35px;
+
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        backdrop-filter: blur(20px);
+
+        border-radius: 30px;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,0.4);
+
+        animation: fade 0.8s ease;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    .header {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+
+        margin:auto;
+        border-radius:50%;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        font-size:40px;
+        font-weight:800;
+
+        background:
+        linear-gradient(135deg,#38bdf8,#6366f1);
+
+        box-shadow:0 10px 30px rgba(59,130,246,.5);
+    }
+
+
+    h1 {
+        margin:20px 0 5px;
+        font-size:clamp(30px,5vw,45px);
+    }
+
+
+    .subtitle {
+        opacity:.75;
+        font-size:16px;
+    }
+
+
+    .card {
+
+        margin-top:20px;
+
+        padding:20px;
+
+        border-radius:20px;
+
+        background:
+        rgba(255,255,255,.07);
+
+        border:
+        1px solid rgba(255,255,255,.12);
+
+        transition:.3s;
+
+    }
+
+
+    .card:hover {
+
+        transform:translateY(-5px);
+
+        background:
+        rgba(255,255,255,.12);
+
+    }
+
+
+    .title {
+
+        font-size:18px;
+        font-weight:700;
+        margin-bottom:8px;
+
+    }
+
+
+    .value {
+
+        opacity:.8;
+
+        word-break:break-word;
+
+        margin-bottom:15px;
+
+    }
+
+
+    .buttons {
+
+        display:flex;
+
+        gap:10px;
+
+        flex-wrap:wrap;
+
+    }
+
+
+    button {
+
+        flex:1;
+
+        min-width:120px;
+
+        padding:12px 18px;
+
+        border:none;
+
+        border-radius:14px;
+
+        cursor:pointer;
+
+        font-size:15px;
+
+        font-weight:600;
+
+        transition:.25s;
+
+    }
+
+
+    .open {
+
+        background:
+        linear-gradient(135deg,#3b82f6,#2563eb);
+
+        color:white;
+
+    }
+
+
+    .copy {
+
+        background:
+        rgba(255,255,255,.15);
+
+        color:white;
+
+        border:
+        1px solid rgba(255,255,255,.2);
+
+    }
+
+
+    button:hover {
+
+        transform:scale(1.05);
+
+    }
+
+
+    footer {
+
+        text-align:center;
+
+        margin-top:30px;
+
+        opacity:.6;
+
+        font-size:14px;
+
+    }
+
+
+    @media(max-width:500px){
+
+        .container{
+            padding:25px;
+            border-radius:22px;
+        }
+
+        .buttons{
+            flex-direction:column;
+        }
+
+        button{
+            width:100%;
+        }
+
+    }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="header">
+
+<div class="avatar">
+JN
+</div>
+
+<h1>Jacob Navaratne</h1>
+
+<div class="subtitle">
+Tech Enthusiast • Developer • Creator
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="title">
+📞 Phone
+</div>
+
+<div class="value">
++44 7824 584569
+</div>
+
+<div class="buttons">
+
+<button class="open"
+onclick="window.location.href='tel:+447824584569'">
+Open
+</button>
+
+<button class="copy"
+onclick="copyText('+44 7824 584569')">
+Copy
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="title">
+📧 Email
+</div>
+
+<div class="value">
+jacob@navaratne.uk
+</div>
+
+
+<div class="buttons">
+
+<button class="open"
+onclick="window.location.href='mailto:jacob@navaratne.uk'">
+Open
+</button>
+
+
+<button class="copy"
+onclick="copyText('jacob@navaratne.uk')">
+Copy
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="title">
+💻 GitHub
+</div>
+
+<div class="value">
+github.com/smartsparkcoding
+</div>
+
+
+<div class="buttons">
+
+<button class="open"
+onclick="window.open('https://github.com/smartsparkcoding','_blank')">
+Open
+</button>
+
+
+<button class="copy"
+onclick="copyText('https://github.com/smartsparkcoding/')">
+Copy
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="title">
+🌐 Main Website
+</div>
+
+<div class="value">
+jacob.navaratne.uk
+</div>
+
+
+<div class="buttons">
+
+<button class="open"
+onclick="window.open('https://jacob.navaratne.uk/','_blank')">
+Open
+</button>
+
+
+<button class="copy"
+onclick="copyText('https://jacob.navaratne.uk/')">
+Copy
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<footer>
+
+© Jacob Navaratne • Contact Page
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+function copyText(text){
+
+    navigator.clipboard.writeText(text)
+    .then(()=>{
+
+        alert("Copied to clipboard!");
+
+    })
+    .catch(()=>{
+
+        alert("Copy failed");
+
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
