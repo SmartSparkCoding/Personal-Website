@@ -1,0 +1,227 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+	<main>
+		<section class="hero">
+			<div class="container">
+				<h1>
+					Jacob Navaratne
+				</h1>
+				<p class="hero-description">
+					I'm a student and developer from Kent, UK, interested in technology,
+					software development, artificial intelligence and building things
+					that solve real problems.
+				</p>
+
+				<div class="hero-actions">
+					<a href="/portfolio" class="button button-primary">
+						Explore my portfolio
+					</a>
+					<a href="#about" class="button button-secondary">
+						About Me
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="about">
+			<div class="container">
+				<div class="section-heading">
+					<h2>
+						Developer and student,
+						<span>always building.</span>
+					</h2>
+				</div>
+
+				<div class="about-content">
+					<div class="about-placeholder">
+						<span>Photo coming soon!</span>
+					</div>
+
+					<div class="about-text">
+						<p>
+							Hey there! I'm Jacob. I am a student at Ashford School in the UK with a strong interest in technology, programming and innovation.
+						</p>
+						<p>
+							Overtime, I've moved from experimenting with smaller projects for just myself to building full-stack applications, working on databases, backend systems and deployment.
+						</p>
+						<p>
+							Outside of technology, I enjoy swimming, learning new things, playing the piano, playing padal, meeting up with freinds and getting involed in projects at school and through Hack Club!
+						</p>
+
+						<div class="quick-facts">
+							<div>
+								<span class="fact-label">Based in</span>
+								<strong>Kent, UK</strong>
+							</div>
+							<div>
+								<span class="fact-label">Age</span>
+								<strong>14</strong>
+							</div>
+							<div>
+								<span class="fact-label">Currently</span>
+								<strong>Student & Developer</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</BaseLayout>
+
+<style>
+	.hero {
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+		padding: 120px 0 100px;
+	}
+
+	h1 {
+		max-width: 900px;
+		margin-bottom: 28px;
+		font-size: clamp(4rem, 10vh, 8rem);
+		font-weight: 600;
+		letter-spacing: -0.07em;
+		line-height: 0.95;
+	}
+	.hero-description {
+		max-width: 650px;
+		margin-bottom: 36px;
+		font-size: clamp(1.1rem, 2vw, 1.35rem);
+		line-height: 1.6;
+  	}
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 48px;
+		padding: 0 22px;
+		border-radius: 999px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		transition: 
+			background-color 180ms ease,
+			border-color 180ms ease,
+			transform 180ms ease;
+	}
+	.button:hover {
+		transform: translateY(-2px);
+	}
+	.button-primary {
+		background: var(--accent);
+		color: white;
+	}
+	.button-primary:hover {
+		background: var(--accent-hover);
+	}
+	.button-secondary {
+		border: 1px solid var(--border-strong);
+		background: var(--surface);
+		color: var(--text-primary);
+	}
+	.button-secondary:hover {
+		border-color: var(--accent);
+	}
+
+	.about {
+		padding: 120px 0;
+		border-top: 1px solid var(--border);
+	}
+	.section-heading {
+		max-width: 700px;
+		margin-bottom: 70px;
+	}
+	.section-heading h2 {
+		margin: 0;
+		font-size: clamp(2.5rem, 6vh, 5rem);
+		font-weight: 600;
+	}
+	.section-heading h2 span {
+		color: var(--text-secondary);
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr);
+		gap: 80px;
+		align-items: start;
+	}
+
+	.about-placeholder {
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		background: var(--surface);
+		color: var(--text-muted);
+	}
+	.about-text {
+		max-width: 600px;
+	}
+	.about-text p {
+		margin-bottom: 24px;
+		font-size: 1.05rem;
+	}
+	.quick-facts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+		margin-top: 48px;
+		padding: 32px;
+		border-top: 1px solid var(--border);
+	}
+	.quick-facts div {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+	.fact-label {
+		color: var(--text-muted);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.quick-facts strong {
+		font-size: 0.95rem;
+		font-weight: 500;
+	}
+
+	@media (max-width: 800px) {
+		.hero {
+			min-height: auto;
+			padding: 100px 0 80px;
+		}
+		.about {
+			padding: 80px 0;
+		}
+
+		.about-content {
+			grid-template-columns: 1fr;
+			gap: 48px;
+		}
+		.about-placeholder {
+			max-width: 500px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: clamp(3rem, 17vw, 5rem);
+		}
+
+		.quick-facts {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
