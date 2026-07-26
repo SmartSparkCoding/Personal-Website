@@ -3,7 +3,7 @@ title: "Bragging Rights"
 description: "A full-stack web application for tracking competitive board game results, player statistics and leaderboards."
 year: 2026
 startDate: "2026-07-17"
-status: "In Development"
+status: "Active"
 featured: true
 category: "Web"
 
