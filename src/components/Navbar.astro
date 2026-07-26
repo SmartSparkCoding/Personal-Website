@@ -1,0 +1,132 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/#about' },
+  { label: 'Portfolio', href: '/portfolio' },
+];
+---
+
+<header class="site-header">
+  <div class="nav-container">
+    <a href="/" class="logo" aria-label="Jacob Navaratne home">
+      Jacob Navaratne
+    </a>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <a href="#contact" class="contact-link">
+      Contact
+    </a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .nav-container {
+    width: min(calc(100% - 40px), var(--max-width));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .logo {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  nav a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color 180ms ease;
+  }
+
+  nav a:hover {
+    color: var(--text-primary);
+  }
+
+  .contact-link {
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    background: var(--accent);
+    color: white;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .contact-link:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 700px) {
+    .nav-container {
+      width: min(calc(100% - 24px), var(--max-width));
+      padding: 0 16px;
+    }
+
+    nav ul {
+      gap: 16px;
+    }
+
+    .contact-link {
+      display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    nav ul {
+      display: none;
+    }
+  }
+</style>

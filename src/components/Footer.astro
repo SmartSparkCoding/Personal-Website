@@ -1,0 +1,166 @@
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="footer-brand">
+				<a href="/" class="footer-logo">Jacob Navaratne</a>
+
+				<p>
+					Student & Developer building things with technology,
+					software and AI.
+				</p>
+			</div>
+
+			<div class="footer-links">
+				<div class="footer-column">
+					<h3>Explore</h3>
+
+					<a href="/">Home</a>
+					<a href="/#about">About</a>
+					<a href="/portfolio">Portfolio</a>
+					<a href="/#contact">Contact</a>
+				</div>
+
+				<div class="footer-column">
+					<h3>Connect</h3>
+
+					<a
+						href="https://github.com/smartsparkcoding"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						GitHub
+						<span>↗</span>
+					</a>
+
+					<a
+						href="mailto:jacob@navaratne.uk"
+					>
+						Email
+						<span>↗</span>
+					</a>
+
+					<a
+						href="https://linkedin.com/in/jacobnavaratne"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						LinkedIn
+						<span>↗</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>© {new Date().getFullYear()} Jacob Navaratne. All rights reserved.</p>
+
+			<p>Built with Astro</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		border-top: 1px solid var(--border);
+		background: var(--background);
+	}
+
+	.footer-main {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 80px;
+		padding: 80px 0;
+	}
+
+	.footer-brand {
+		max-width: 400px;
+	}
+
+	.footer-logo {
+		display: inline-block;
+		margin-bottom: 16px;
+		color: var(--text-primary);
+		font-size: 1.1rem;
+		font-weight: 600;
+	}
+
+	.footer-brand p {
+		max-width: 320px;
+		margin: 0;
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.footer-links {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(120px, 1fr));
+		gap: 60px;
+	}
+
+	.footer-column {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.footer-column h3 {
+		margin: 0 0 8px;
+		color: var(--text-muted);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.footer-column a {
+		width: fit-content;
+		color: var(--text-secondary);
+		font-size: 0.9rem;
+		transition: color 180ms ease;
+	}
+
+	.footer-column a:hover {
+		color: var(--text-primary);
+	}
+
+	.footer-column a span {
+		margin-left: 4px;
+		color: var(--accent);
+	}
+
+	.footer-bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 24px 0;
+		border-top: 1px solid var(--border);
+	}
+
+	.footer-bottom p {
+		margin: 0;
+		color: var(--text-muted);
+		font-size: 0.8rem;
+	}
+
+	@media (max-width: 700px) {
+		.footer-main {
+			grid-template-columns: 1fr;
+			gap: 48px;
+			padding: 60px 0;
+		}
+
+		.footer-links {
+			gap: 40px;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.footer-bottom {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+</style>
