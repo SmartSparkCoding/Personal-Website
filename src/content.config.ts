@@ -1,7 +1,11 @@
 import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const projects = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "./src/content/projects",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -36,32 +40,6 @@ const projects = defineCollection({
   }),
 });
 
-const timeline = defineCollection({
-  type: "content",
-  schema: z.object({
-    date: z.coerce.date(),
-    title: z.string(),
-    category: z.string(),
-    image: z.string().optional(),
-    relatedProject: z.string().optional(),
-  }),
-});
-
-const certificates = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    organisation: z.string(),
-    date: z.coerce.date(),
-    description: z.string(),
-
-    image: z.string().optional(),
-    verificationLink: z.string().url().optional(),
-  }),
-});
-
 export const collections = {
   projects,
-  timeline,
-  certificates,
 };

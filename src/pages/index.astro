@@ -29,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<div class="section-heading">
 					<h2>
 						Developer and student,
-						<span>always building.</span>
+						<span> always building.</span>
 					</h2>
 				</div>
 				<div class="about-content">
@@ -64,6 +64,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				</div>
 			</div>
 		</section>
+				<section id="contact" class="contact">
+					<div class="container">
+						<div class="contact-card">
+							<div class="contact-content">
+								<p class="eyebrow">Get in touch</p>
+
+								<h2>
+									Let's build 
+									<span> something.</span>
+								</h2>
+
+								<p class="contact-description">
+									Whether you want to talk about technology, a project,
+									AI, coding or just say hello, I'd love to hear from you.
+								</p>
+
+								<div class="contact-actions">
+									<a
+										href="mailto:jacob@navaratne.uk"
+										class="button button-primary"
+									>
+										Send me an email
+										<span>↗</span>
+									</a>
+
+									<a
+										href="https://github.com/smartsparkcoding"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="button button-secondary"
+									>
+										View my GitHub
+										<span>↗</span>
+									</a>
+									<a
+										href="https://hackclub.enterprise.slack.com/team/U0AEYDUCLKF"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="button button-secondary"
+									>
+										Message me on Slack
+										<span>↗</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 	</main>
 </BaseLayout>
 
@@ -187,6 +235,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		font-size: 0.95rem;
 		font-weight: 500;
 	}
+	.contact {
+    padding: 120px 0 160px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-card {
+    position: relative;
+    overflow: hidden;
+    padding: 80px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(33, 140, 90, 0.18),
+            transparent 40%
+        ),
+        var(--surface);
+}
+
+.contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.contact h2 {
+    margin-bottom: 28px;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 600;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
+}
+
+.contact h2 span {
+    color: var(--text-secondary);
+}
+
+.contact-description {
+    max-width: 600px;
+    margin-bottom: 36px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.contact-actions .button span {
+    margin-left: 6px;
+    color: var(--accent);
+}
+
+@media (max-width: 700px) {
+    .contact {
+        padding: 80px 0 100px;
+    }
+
+    .contact-card {
+        padding: 48px 28px;
+    }
+}
 	@media (max-width: 800px) {
 		.hero {
 			min-height: auto;
