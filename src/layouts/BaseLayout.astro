@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
 
 interface Props {
     title?: string;
@@ -8,22 +9,25 @@ interface Props {
 
 const {
     title = 'Jacob Navaratne - Student & Developer',
-    description =  'The personal website and portfolio of Jacob Navaratne, a student and developer from Kent, UK'
+    description = 'The personal website and portfolio of Jacob Navaratne, a student and developer from Kent, UK'
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width"/>
-<title>{title}</title>
-<meta name="description" content={description} />
-<link rel="canonical href={Astro.url}/>
-<meta name="theme-color" content="#0a0a0a"/>
-<slot name="head"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="theme-color" content="#0a0a0a" />
+    <slot name="head" />
 </head>
+
 <body>
-<slot />
+    <Navbar />
+
+    <slot />
 </body>
 </html>
