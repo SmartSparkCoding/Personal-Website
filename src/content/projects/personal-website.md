@@ -16,7 +16,7 @@ technologies:
 
 github: "https://github.com/SmartSparkCoding/Personal-Website"
 live: "https://jacob.navaratne.uk"
-image: "/image/projects/no-image.png"
+image: "/images/projects/no-image.png"
 screenshots: []
 role: "Solo Developer"
 challenges: "Designing and building a flexible portfolio system that can grow alongside my development journey. This included creating a reusable layout system, building a content collection for projects, generating individual project pages automatically, and creating a consistent and responsive design across the website."
