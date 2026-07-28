@@ -4,6 +4,7 @@ const shortCommitSha = commitSha ? commitSha.slice(0, 7) : 'local';
 
 const deploymentTime = new Date();
 const formattedDeploymentTime = deploymentTime.toLocaleString('en-GB', {
+	timeZone: 'Europe/London',
 	dateStyle: 'medium',
 	timeStyle: 'short',
 });
