@@ -4,7 +4,7 @@ description: "A modern personal portfolio website showcasing my projects, intere
 year: 2026
 startDate: "2026-02-14"
 status: "Active"
-featured: true
+featured: false
 category: "Web"
 
 technologies:
