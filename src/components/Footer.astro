@@ -1,3 +1,14 @@
+---
+const commitSha = import.meta.env.VERCEL_GIT_COMMIT_SHA;
+const shortCommitSha = commitSha ? commitSha.slice(0, 7) : 'local';
+
+const deploymentTime = new Date();
+const formattedDeploymentTime = deploymentTime.toLocaleString('en-GB', {
+	dateStyle: 'medium',
+	timeStyle: 'short',
+});
+---
+
 <footer class="site-footer">
 	<div class="container">
 		<div class="footer-main">
@@ -52,10 +63,27 @@
 		</div>
 
 		<div class="footer-bottom">
-			<p>© {new Date().getFullYear()} Jacob Navaratne. All rights reserved.</p>
+	<p>© {new Date().getFullYear()} Jacob Navaratne. All rights reserved.</p>
 
-			<p>Built with Astro</p>
-		</div>
+	<div class="footer-meta">
+		<span>Built with Astro</span>
+
+		<span class="footer-separator">·</span>
+
+		<a
+			href={`https://github.com/SmartSparkCoding/Personal-Website/commit/${commitSha}`}
+			target="_blank"
+			rel="noopener noreferrer"
+			title={`View commit ${commitSha || 'local'}`}
+		>
+			Commit {shortCommitSha}
+		</a>
+
+		<span class="footer-separator">·</span>
+
+		<span>Deployed {formattedDeploymentTime}</span>
+	</div>
+</div>
 	</div>
 </footer>
 
@@ -143,6 +171,33 @@
 		color: var(--text-muted);
 		font-size: 0.8rem;
 	}
+
+	.footer-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 8px;
+}
+
+.footer-meta a {
+	color: var(--text-muted);
+	transition: color 180ms ease;
+}
+
+.footer-meta a:hover {
+	color: var(--text-primary);
+}
+
+.footer-separator {
+	color: var(--border-strong);
+}
+
+@media (max-width: 500px) {
+	.footer-meta {
+		justify-content: flex-start;
+	}
+}
 
 	@media (max-width: 700px) {
 		.footer-main {
