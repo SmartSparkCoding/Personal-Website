@@ -1,6 +1,6 @@
 ---
 title: "Bragging Rights"
-description: "A full-stack web application for tracking competitive board game results, player statistics and leaderboards."
+description: "A web app for keeping track of board game results, stats and family leaderboards."
 year: 2026
 startDate: "2026-07-17"
 status: "Active"
@@ -19,13 +19,13 @@ github: "https://github.com/smartsparkcoding/braggingrights"
 live: "https://braggingrights.mini-jacob.hackclub.app"
 image: "/images/projects/bragging-rights/hero.png"
 screenshots: []
-role: "Solo Full-stack Developer"
-challenges: "Building a flexible database structure capable of supporting different games, players and scoring systems, while working with Flask and different routes."
-learned: "Developing full-stack applications, designing themes, and understanding how UI/UX impacts users."
+role: "Developer"
+challenges: "Designing a database that can handle different games, players and scoring systems while working with Flask and different routes."
+learned: "Building a full-stack app, designing themes, and thinking about how UI/UX affects the way people use it."
 ---
 
-Bragging Rights is a full-stack application I am building to track competitive board game results between players in my family.
+Bragging Rights is a web app I am building to keep track of board game results between people in my family.
 
-The web application includes player profiles, PIN authentication, game statistics, leaderboards and a flexible database system designed to support different types of games, such as Scrabble and Monopoly, with different scoring systems.
+It includes player profiles, PIN authentication, game statistics, leaderboards and a flexible database for games such as Scrabble and Monopoly, each with their own scoring systems.
 
-The project has allowed me to explore full-stack development beyond simple websites, while learning about backend development, databases and how different aspects of a website affect the user's experience and understanding of an application.
+The project has been a way for me to practise full-stack development, backend work and databases while making something my family can actually use.
